@@ -3,6 +3,8 @@ plugins {
     alias(libs.plugins.kotlin.compose)
 }
 
+println("PLUGINS IN APP: " + plugins.map { it.javaClass.name })
+
 android {
     namespace = "com.example.tenantsys"
     compileSdk = 35
@@ -38,6 +40,8 @@ android {
 }
 
 dependencies {
+    implementation("androidx.navigation:navigation-fragment-ktx:2.8.8")
+    implementation("androidx.navigation:navigation-ui-ktx:2.8.8")
     implementation(libs.androidx.appcompat)
     implementation(libs.androidx.constraintlayout)
     implementation(platform(libs.androidx.compose.bom))
